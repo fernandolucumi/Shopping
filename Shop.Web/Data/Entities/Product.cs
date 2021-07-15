@@ -3,7 +3,7 @@
     using System;
     using System.ComponentModel.DataAnnotations;
 
-    public class Product 
+    public class Product :IEntity
     {
         public int Id { get; set; }
         [MaxLength(50, ErrorMessage = "The field {0} can contain {1} characters length!")]
@@ -21,7 +21,9 @@
         public bool IsAvailable { get; set; }
         [DisplayFormat(DataFormatString = "{0:N2}", ApplyFormatInEditMode = false)]
         public double Stock { get; set; }
-        
+
+        public User User { get; set; }
+
 
     }
 }
